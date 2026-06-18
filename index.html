@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Saúde e Musculação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lux/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* * DOCUMENTAÇÃO CSS CUSTOMIZADO
+         * Aqui ficam as regras que o Bootstrap não cobre ou que quero sobrescrever manualmente.
+         */
+        /* Ajuste fino para a tipografia Lux nos itens de lista */
+        
+        .list-group-item strong {
+            letter-spacing: 0.5px;
+            /* Espaçamento entre as letras */
+            text-transform: uppercase;
+            /* Converte o texto para MAIÚSCULAS */
+            font-size: 0.85rem;
+            /* Tamanho da fonte ligeiramente menor que o padrão */
+            color: #333;
+            /* Cor cinza escuro */
+        }
+        /* Estilo para ícones personalizados antes do texto usando pseudo-elementos */
+        
+        .mito-item::before {
+            content: "✕ ";
+            color: #df382c;
+            /* Cor danger (vermelho) do tema Lux */
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .verdade-item::before {
+            content: "✓ ";
+            color: #38c172;
+            /* Cor success (verde) aproximada */
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        /* Área de resultado das calculadoras com Flexbox para centralização */
+        
+        .area-resultado {
+            min-height: 50px;
+            display: flex;
+            /* CSS Equivalente às classes 'd-flex' do Bootstrap */
+            align-items: center;
+            /* Centraliza o conteúdo verticalmente */
+            justify-content: center;
+            /* Centraliza o conteúdo horizontalmente */
+        }
+    </style>
+</head>
+
+<body class="bg-light text-dark">
+
+    <header class="container mt-5 pt-5 text-center">
+        <h1 class="text-primary display-3 fw-bold mb-3">Portal de Saúde</h1>
+
+        <p class="lead text-secondary text-uppercase" style="letter-spacing: 2px;">Primeiros passos para sair do sedentarismo.</p>
+
+        <hr class="my-5 opacity-25">
+    </header>
+
+    <section class="container bg-white p-5 rounded shadow-sm mb-5 border">
+        <div class="row align-items-center g-5">
+            <div class="col-md-7">
+                <h2 class="text-dark mb-4 border-bottom pb-3">Por que mudar agora?</h2>
+
+                <h3 class="text-danger h4 text-uppercase fw-bold mt-4" style="letter-spacing: 1px;">O Perigo Invisível</h3>
+                <p class="text-muted">Passar o dia parado cria um problema silencioso no seu corpo:</p>
+
+                <ul class="list-group list-group-flush mb-4">
+                    <li class="list-group-item bg-transparent px-0"><strong>Mente:</strong> Aumenta o estresse e abre portas para ansiedade.</li>
+                    <li class="list-group-item bg-transparent px-0"><strong>Sono:</strong> O corpo não entende que precisa descansar.</li>
+                    <li class="list-group-item bg-transparent px-0"><strong>Dores:</strong> Enfrafraquece músculos e causa dores nas costas.</li>
+                </ul>
+
+                <h3 class="text-success h4 text-uppercase fw-bold" style="letter-spacing: 1px;">Benefícios Imediatos</h3>
+                <p class="text-muted">Mudanças incríveis já nas primeiras semanas:</p>
+                <ul class="list-group list-group-flush mb-0">
+                    <li class="list-group-item bg-transparent px-0"><strong>Energia:</strong> Mais pique para trabalho e estudos.</li>
+                    <li class="list-group-item bg-transparent px-0"><strong>Alívio:</strong> Diminui pressão nas articulações e pescoço.</li>
+                    <li class="list-group-item bg-transparent px-0"><strong>Humor:</strong> Liberação natural de bem-estar no cérebro.</li>
+                </ul>
+            </div>
+
+            <div class="col-md-5 text-center">
+                <img src="imagem1.jpeg" alt="Pessoa exercitando" class="img-fluid rounded shadow-sm border p-2 bg-white">
+            </div>
+        </div>
+    </section>
+
+    <section class="container mb-5 pb-5">
+        <h2 class="text-center mb-5 text-uppercase fw-bold" style="letter-spacing: 3px;">Mito x Verdade</h2>
+
+        <div class="text-center mb-5">
+            <img src="imagem2.jpeg" alt="Comparativo" class="img-fluid rounded shadow-sm border" style="max-width: 800px;">
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="bg-white p-4 rounded shadow-sm h-100 border-start border-danger border-4">
+                    <h4 class="text-danger text-uppercase fw-bold h6 mb-4" style="letter-spacing: 1px;">O que dizem (Mito)</h4>
+                    <ul class="list-group list-group-flush text-muted">
+                        <li class="list-group-item bg-transparent border-0 ps-0 mito-item">Suar bastante significa perder mais gordura.</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0 mito-item">Musculação transforma o corpo rápido demais.</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0 mito-item">Sentir muita dor no dia seguinte é inevitável.</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0 mito-item">Comer carboidrato à noite engorda.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bg-white p-4 rounded shadow-sm h-100 border-start border-success border-4">
+                    <h4 class="text-success text-uppercase fw-bold h6 mb-4" style="letter-spacing: 1px;">A Ciência diz (Verdade)</h4>
+                    <ul class="list-group list-group-flush text-muted">
+                        <li class="list-group-item bg-transparent border-0 ps-0 verdade-item">O suor é regulação de temperatura, não gordura derretendo.</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0 verdade-item">O ganho de massa é lento, gradual e exige constância.</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0 verdade-item">Dor excessiva é sinal de fadiga extrema ou lesão.</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0 verdade-item">O ganho de peso ocorre pelo excesso de calorias no dia todo.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mb-5 pb-5">
+        <h2 class="mb-5 text-center text-uppercase fw-bold" style="letter-spacing: 3px;">Ferramentas Úteis</h2>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-primary text-uppercase fw-bold h6 mb-2" style="letter-spacing: 1px;">A. Calculadora de IMC</h4>
+                        <p class="card-text text-muted small mb-4">Índice de Massa Corporal padrão da OMS.</p>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-6">
+                                <label class="form-label small text-uppercase text-secondary">Peso (kg)</label>
+                                <input type="number" id="inputPesoIMC" class="form-control form-control-sm" placeholder="Ex: 75">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small text-uppercase text-secondary">Altura (m)</label>
+                                <input type="number" id="inputAlturaIMC" step="0.01" class="form-control form-control-sm" placeholder="Ex: 1.75">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-outline-primary btn-sm w-100 text-uppercase mb-4" style="letter-spacing: 1px;" onclick="calcularIMC()">Calcular</button>
+
+                        <div id="resultadoIMC" class="area-resultado bg-light rounded text-center fw-bold text-primary p-2 small border"></div>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0 text-center pb-3">
+                        <a href="https://www.tuasaude.com/imc/" target="_blank" class="text-muted small text-decoration-none">Mais detalhes →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-primary text-uppercase fw-bold h6 mb-2" style="letter-spacing: 1px;">B. Consumo de Água</h4>
+                        <p class="card-text text-muted small mb-4">Necessidade diária baseada no peso corporal.</p>
+
+                        <div class="mb-4">
+                            <label class="form-label small text-uppercase text-secondary">Seu Peso (kg)</label>
+                            <input type="number" id="inputPesoAgua" class="form-control form-control-sm" placeholder="Ex: 75">
+                        </div>
+
+                        <button class="btn btn-outline-primary btn-sm w-100 text-uppercase mb-4" style="letter-spacing: 1px;" onclick="calcularAgua()">Calcular Litros</button>
+
+                        <div id="resultadoAgua" class="area-resultado bg-light rounded text-center fw-bold text-primary p-2 small border"></div>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0 text-center pb-3">
+                        <a href="https://www.minhavida.com.br/alimentacao/ingredientes/3937-agua" target="_blank" class="text-muted small text-decoration-none">Mais detalhes →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white-50 text-center p-4 mt-5">
+        <div class="container">
+            <small class="text-uppercase" style="letter-spacing: 1px;">Portal de Saúde © 2026 - Trabalho Acadêmico - Henrique Fernandes </small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        /**
+         * DOCUMENTAÇÃO JAVASCRIPT
+         * Função para calcular o IMC (Índice de Massa Corporal).
+         * Fórmula padrão: Peso dividido pela altura ao quadrado.
+         */
+        function calcularIMC() {
+            // Captação e conversão dos valores digitados nos inputs para números de ponto flutuante (decimais)
+            let peso = parseFloat(document.getElementById("inputPesoIMC").value);
+            let altura = parseFloat(document.getElementById("inputAlturaIMC").value);
+            let divResultado = document.getElementById("resultadoIMC");
+
+            // Validação de segurança: Impede o cálculo se os valores estiverem em branco ou negativos
+            if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+                divResultado.innerHTML = "Insira valores válidos.";
+                divResultado.classList.add("text-danger"); // Adiciona classe vermelha dinamicamente para erro
+                return;
+            }
+
+            // Lógica matemática do IMC
+            let imc = peso / (altura * altura);
+            let classificacao = "";
+            divResultado.classList.remove("text-danger"); // Limpa o alerta de erro caso haja uma nova tentativa correta
+
+            // Estrutura de decisão (Encadeamento Lógico) para definir a classificação
+            if (imc < 18.5) {
+                classificacao = "Abaixo do peso";
+            } else if (imc < 24.9) {
+                classificacao = "Peso normal";
+            } else if (imc < 29.9) {
+                classificacao = "Excesso de peso";
+            } else {
+                classificacao = "Obesidade";
+            }
+
+            // Renderiza o resultado na tela limitando as casas decimais a duas (.toFixed(2))
+            divResultado.innerHTML = `IMC: ${imc.toFixed(2)}<br>${classificacao.toUpperCase()}`;
+        }
+
+        /**
+         * Função para calcular a quantidade ideal de ingestão de água.
+         * Base de cálculo recomendada: 35ml por cada Quilo (kg) corporal.
+         */
+        function calcularAgua() {
+            let peso = parseFloat(document.getElementById("inputPesoAgua").value);
+            let divResultado = document.getElementById("resultadoAgua");
+
+            if (isNaN(peso) || peso <= 0) {
+                divResultado.innerHTML = "Insira um peso válido.";
+                divResultado.classList.add("text-danger");
+                return;
+            }
+
+            // Multiplica o peso por 35 (ml) e divide por 1000 para converter de mililitros para Litros
+            let litros = (35 * peso) / 1000;
+            divResultado.classList.remove("text-danger");
+
+            divResultado.innerHTML = `Consumo ideal:<br>${litros.toFixed(2)} LITROS / DIA`;
+        }
+    </script>
+</body>
+
+</html>
